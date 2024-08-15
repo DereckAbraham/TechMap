@@ -1,0 +1,92 @@
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    #root {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    header {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .logo span {
+        font-size: 24px;
+    }
+
+    nav {
+        width: 60%;
+        text-align: left;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .cuerpo {
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 30%;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container {
+        flex-direction: row;
+    }
+
+    .background-container img {
+        width: auto;
+        height: 25rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .btn1, .btn2, .btn3, .btn4, .btn5 {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 10px;
+    }
+
+    .modal {
+        width: 70%;
+        height: auto;
+        top: 15%;
+        left: 15%;
+        right: 15%;
+    }
+
+    .modal-content {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .modal img {
+        height: auto;
+    }
+
+    .btn {
+        width: 12rem;
+        height: 4rem;
+        font-size: 1rem;
+        cursor: pointer;
+        background-color: #b0b0b0;
+        color: rgb(200, 245, 150);
+    }
+}
