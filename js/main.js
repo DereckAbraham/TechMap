@@ -11,7 +11,7 @@ root.innerHTML = `
             <a href="#">CPU</a>
             <a href="#">Fuentes de poder</a>
             <a href="#">Placa madre</a>
-            <a href="https://github.com/DereckAbraham/Reparacion2024" class="gitlink">GitHub</a>
+            <a href="https://github.com/DereckAbraham/TechMap" class="gitlink">GitHub</a>
           </nav>
     </header>
     <section class="cuerpo">
