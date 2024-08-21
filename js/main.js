@@ -39,11 +39,11 @@ root.innerHTML = `
 
     <!-- Ventanas Modales -->
     <div id="modal1" class="modal">
-    <div class="modal-content">
+    <div class="modal-content" id="content1">
         <span class="close-btn" data-modal="modal1">
             <span class="material-symbols-outlined">close</span>
         </span>
-        <span class="material-symbols-outlined" id="descargarModal1">download</span>
+        <span class="material-symbols-outlined descargar" id="descargarModal1">download</span>
         <h2>Informacion del Disipador</h2>
         <p class="textoInfo">
             Un disipador es un instrumento que se utiliza para bajar la temperatura de algunos componentes electrónicos.
@@ -52,11 +52,11 @@ root.innerHTML = `
     </div>
 </div>
 <div id="modal2" class="modal">
-    <div class="modal-content">
+    <div class="modal-content" id="content2">
         <span class="close-btn" data-modal="modal2">
             <span class="material-symbols-outlined">close</span>
         </span>
-        <span class="material-symbols-outlined" id="descargarModal2">download</span>
+        <span class="material-symbols-outlined descargar" id="descargarModal2">download</span>
         <h2>Informacion de las Ranuras de RAM</h2>
         <p class="textoInfo">
             Conector físico en una computadora tarjeta madre Diseñado para contener y conectar módulos de memoria de acceso aleatorio (RAM).
@@ -71,11 +71,11 @@ root.innerHTML = `
     </div>
 </div>
 <div id="modal3" class="modal">
-    <div class="modal-content">
+    <div class="modal-content" id="content3">
         <span class="close-btn" data-modal="modal3">
             <span class="material-symbols-outlined">close</span>
         </span>
-        <span class="material-symbols-outlined" id="descargarModal3">download</span>
+        <span class="material-symbols-outlined descargar" id="descargarModal3">download</span>
         <h2>Informacion de la entrada de la fuente de poder</h2>
         <p class="textoInfo">
             La fuente de poder en una computadora convierte la corriente alterna (AC) de la toma de corriente en corriente continua (DC) que necesitan los componentes de la computadora para funcionar. También distribuye la energía a estos componentes y protege el sistema contra problemas eléctricos.
@@ -84,11 +84,11 @@ root.innerHTML = `
     </div>
 </div>
 <div id="modal4" class="modal">
-    <div class="modal-content">
+    <div class="modal-content" id="content4">
         <span class="close-btn" data-modal="modal4">
             <span class="material-symbols-outlined">close</span>
         </span>
-        <span class="material-symbols-outlined" id="descargarModal4">download</span>
+        <span class="material-symbols-outlined descargar" id="descargarModal4">download</span>
         <h2>Informacion de la BIOS</h2>
         <p class="textoInfo">
             La BIOS (Basic Input/Output System) es un firmware en la placa madre que inicializa y prueba el hardware al encender la computadora antes de cargar el sistema operativo. Aquí está un resumen de sus funciones principales:
@@ -105,11 +105,11 @@ root.innerHTML = `
     </div>
 </div>
 <div id="modal5" class="modal">
-    <div class="modal-content">
+    <div class="modal-content" id="content5">
         <span class="close-btn" data-modal="modal5">
             <span class="material-symbols-outlined">close</span>
         </span>
-        <span class="material-symbols-outlined" id="descargarModal5">download</span>
+        <span class="material-symbols-outlined descargar" id="descargarModal5">download</span>
         <h2>Informacion de los Puertos de Video</h2>
         <p class="textoInfo">
             Los puertos de video en una computadora permiten conectar monitores y otros dispositivos de visualización. Aquí está un resumen de los tipos más comunes:
@@ -124,7 +124,6 @@ root.innerHTML = `
         <img src="https://hardzone.es/app/uploads-hardzone.es/2018/02/puertos-de-tarjeta-grafica-e1694516507827.jpg" alt="" class="puertoVidImg">
     </div>
 </div>
-
 `
 
 function abrirModal(id) {
@@ -151,9 +150,19 @@ document.querySelectorAll('.close-btn').forEach(button => {
     });
 });
 
-
-window.addEventListener('click', (event) => {
-    if (event.target.classList.contains('modal')) {
-        cerrarModal(event.target.id);
-    }
+document.querySelectorAll('.descargar').forEach(downloadIcon => {
+    downloadIcon.addEventListener('click', () => {
+        let modalContentId = downloadIcon.closest('.modal-content').id;
+        descargarImagen(modalContentId);
+    });
 });
+
+function descargarImagen(contentId) {
+    let content = document.getElementById(contentId);
+    html2canvas(content).then(canvas => {
+        let link = document.createElement('a');
+        link.download = `${contentId}.png`;
+        link.href = canvas.toDataURL();
+        link.click();
+    });
+}
