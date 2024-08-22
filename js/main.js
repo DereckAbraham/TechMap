@@ -166,3 +166,30 @@ function descargarImagen(contentId) {
         link.click();
     });
 }
+
+let buttons = document.querySelectorAll('.btn');
+let menuItems = document.querySelectorAll('.menu-categorias a');
+
+function mostrarBotones(categoria) {
+
+    buttons.forEach(button => button.style.display = 'none');
+    
+    buttons.forEach(button => {
+
+        if (button.textContent.toLowerCase().includes(categoria.toLowerCase())) {
+            button.style.display = 'block';
+        }
+    });
+}
+
+menuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        let href = item.getAttribute('href');
+        let categoria = href.slice(1);
+        mostrarBotones(categoria);
+    });
+});
+
+// Muestra todos los botones al cargar la página
+mostrarBotones(''); // Muestra todos los botones inicialmente
+
