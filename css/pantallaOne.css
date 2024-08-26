@@ -36,7 +36,7 @@
     }
 
     .sidebar {
-        width: 100%;
+        width: 30%;
         box-shadow: none;
         padding: 10px;
         display: flex;
@@ -44,7 +44,7 @@
     }
 
     .container {
-        flex-direction: column;
+        flex-direction: row;
 
     }
 
@@ -58,12 +58,6 @@
         font-size: 14px;
     }
 
-    .btn1, .btn2, .btn3, .btn4, .btn5 {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 5px;
-    }
 
     .modal {
         width: 80%;
@@ -83,12 +77,12 @@
     }
     
     .btn {
-        width: 10rem;
+        width: 1rem;
         height: 2rem;
-        font-size: 0.5rem;
         cursor: pointer;
         background-color: #c6c6c6;
         color: rgb(220, 255, 188);
+        font-size: 0;
     }
     
 }

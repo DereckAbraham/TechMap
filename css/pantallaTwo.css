@@ -56,14 +56,6 @@
         padding: 10px 20px;
         font-size: 16px;
     }
-
-    .btn1, .btn2, .btn3, .btn4, .btn5 {
-        position: relative;
-        top: auto;
-        left: auto;
-        margin: 10px;
-    }
-
     .modal {
         width: 70%;
         height: auto;
@@ -82,9 +74,9 @@
     }
 
     .btn {
-        width: 12rem;
-        height: 4rem;
-        font-size: 1rem;
+        width: 1rem;
+        height: 2rem;
+        font-size: 0rem;
         cursor: pointer;
         background-color: #b0b0b0;
         color: rgb(200, 245, 150);
